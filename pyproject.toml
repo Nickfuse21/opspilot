@@ -1,0 +1,16 @@
+[project]
+name = "opspilot"
+version = "0.1.0"
+description = "Agentic enterprise support & operations copilot with RAG, citations, and guardrails"
+requires-python = ">=3.11"
+dependencies = [
+    "python-dotenv>=1.0",       # loads your .env secrets into the program
+    "google-genai>=2.0",        # the Gemini API client (current, supported SDK)
+    "sentence-transformers>=3.0", # local embedding models
+    "torch>=2.2",               # the engine sentence-transformers runs on (gives us GPU/CUDA)
+]
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100

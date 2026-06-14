@@ -1,0 +1,30 @@
+# --- Secrets: NEVER commit these ---
+.env
+*.key
+
+# --- Python virtual environment (rebuildable from pyproject.toml) ---
+.venv/
+venv/
+
+# --- Python bytecode & caches (auto-generated) ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# --- Local data stores & model caches (large, regenerable) ---
+# chroma vector DB, the Phase 3 SQLite "CRM", downloaded models
+chroma/
+*.sqlite3
+.cache/
+models/
+
+# --- Local-only project guide (kept on disk, not pushed) ---
+CLAUDE.md
+
+# --- Editor / OS noise ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

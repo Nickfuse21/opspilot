@@ -1,3 +1,8 @@
+# Tells pip HOW to build/install this project (needed for `pip install -e .`).
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "opspilot"
 version = "0.1.0"
@@ -8,7 +13,13 @@ dependencies = [
     "google-genai>=2.0",        # the Gemini API client (current, supported SDK)
     "sentence-transformers>=3.0", # local embedding models
     "torch>=2.2",               # the engine sentence-transformers runs on (gives us GPU/CUDA)
+    "langchain-text-splitters>=0.3", # smart document chunking (Phase 1)
+    "chromadb>=0.5",            # vector database for storing & searching embeddings (Phase 1)
 ]
+# Tells setuptools our code lives under src/ (the "src layout").
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [tool.black]
 line-length = 100
 
